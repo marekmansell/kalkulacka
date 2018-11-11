@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>b</title>
+    </head>
+<body>
+
+<script>
+$('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+            alert('Form Submitted. Thanks.')
+            // You can also redirect the user to a custom thank-you page:
+            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+        }
+    })
+})
+</script>
+
+
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfOrc5ullu_TkmDn6PKPMPZLMJ166deLQRsiPN2GZTsDCIORQ/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+
+
+<input id="kkk" type="text" name="entry.40465471" class="form-control" >
+<input id="kkk" type="text" name="entry.38124386" class="form-control" >
+<input id="kkk" type="text" name="entry.56249229" class="form-control" >
+<input id="1940130896" type="text" name="entry.1940130896" class="form-control" >
+<input id="671269859" type="text" name="entry.671269859" class="form-control" >
+<input id="1417534105" type="text" name="entry.1417534105" class="form-control" >
+<input id="1789015317" type="text" name="entry.1789015317" class="form-control" >
+<input id="1078695368" type="text" name="entry.1078695368" class="form-control" >
+<input id="2018257041" type="text" name="entry.2018257041" class="form-control" >
+<input id="92554911" type="text" name="entry.92554911" class="form-control" >
+<input id="104636010" type="text" name="entry.104636010" class="form-control" >
+
+<input type="hidden" name="fvv" value="1">
+<input type="hidden" name="fbzx" value="-5099501196004458638">
+<input type="hidden" name="pageHistory" value="0">
+
+<input class="btn btn-primary" type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>
