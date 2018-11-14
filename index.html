@@ -164,7 +164,7 @@
                     document.getElementById("result_info_text").innerHTML = `
                       Na základe zadaných údajov nám vyšlo, že popri štipendiu vo výške 2800€, ktorým podporujeme každého študenta, Ti vieme poskytnúť aj štipendium vo výške <b id='final_price_stipendium'>-</b><b>€</b>/mesačne. Na semester to je <b id='final_price_semester'>-</b><b>€</b> a na školský rok <b id='final_price_year'>-</b><b>€</b>. 
 
-                      To by znamenalo, že Tvoje členského by bolo vo výške <b id='final_price'>-</b><b>€</b>/mesačne. Môžeš ho zaplatiť aj na semester vopred.
+                      To by znamenalo, že Tvoje členského by bolo vo výške <b id='final_price'>-</b><b>€</b>/mesačne. Môžeš ho zaplatiť aj na semester vopred. Ak sa Ti výška členského zdá privysoká, pokračuj ďalej.
                     `;
                     document.getElementById("suggested_price").value = tuition_fee;
                     document.getElementById("final_price").innerHTML = tuition_fee;
@@ -225,7 +225,7 @@
       </p>
 
       <p>
-        Údaje, ktoré vypĺňaš, považujeme za dôverné. Budú uložené na serveri Nexterie po dobu nevyhnutnú pre posúdenie Tvojej žiadosti. Prístup k údajom budem mať ja, Janka, a Martin s Tomášom. K nikomu inému sa nedostanú a po uzavretí výšky štipendia ich zmažeme.
+        Údaje, ktoré vypĺňaš, považujeme za dôverné. Budú uložené na serveri Nexterie po dobu nevyhnutnú pre posúdenie Tvojej žiadosti. Prístup k údajom budem mať ja - Janka, a Martin Mojzeš s Tomášom Hasalom. K nikomu inému sa nedostanú a po uzavretí výšky štipendia ich zmažeme.
       </p>
 
       <p>
@@ -337,9 +337,9 @@
               <select class="form-control" id="school_status" required>
                 <option value="">Vyber správnu odpoveď</option>
                 <option value="secondary_school">Študent SŠ</option>
-                <option value="bachelor">Študent VŠ - Bc. štúdium (interné)</option>
-                <option value="masters">Študent VŠ - Mgr./Ing. štúdium (interné)</option>
-                <option value="phd">Študent VŠ - doktorandské štúdium (interné)</option>
+                <option value="bachelor">Študent VŠ - Bc. štúdium (denne)</option>
+                <option value="masters">Študent VŠ - Mgr./Ing. štúdium (denne)</option>
+                <option value="phd">Študent VŠ - doktorandské štúdium (denne)</option>
                 <option value="distant">Študent VŠ - externé štúdium</option>
                 <option value="alumni">Absolvent</option>
               </select>
@@ -359,7 +359,7 @@
             </div>
 
             <div class="form-group">
-              <label for="volunteering_hours">Koľko času do týždňa venuješ práci pre iných bez nároku na finančnú odmenu?</label>
+              <label for="volunteering_hours">Koľko času do mesiaca venuješ práci pre iných bez nároku na finančnú odmenu alebo rozbehu vlastného projektu / biznis plánu?</label>
               <input type="number" class="form-control" id="volunteering_hours" placeholder="Zadaj celé číslo (počet hodín)" required>
               <div class="invalid-feedback">Prosím zadaj celé číslo (počet hodín)</div>
               <small class="form-text text-muted">
@@ -399,7 +399,7 @@
                 <input class="form-check-input" type="radio" name="cholarship_result" id="cholarship_result_disagree" value="no" required onclick="document.getElementById('scholarship_ok_disclaimer').removeAttribute('hidden')">
                 <label class="form-check-label" for="cholarship_result_disagree">
                   <div class="form-group" id="result_disagree">
-                    Ďakujem za ponuku, no navrhované členské je pre moju životnú situáciu stále vysoké. Maximálnu sumu, ktorú viem platiť mesačne je
+                    Ďakujem za ponuku, no <strong>navrhované členské je pre moju životnú situáciu stále vysoké.</strong> Maximálnu sumu, ktorú viem platiť mesačne je
                     <input type="number" class="form-contro" id="suggested_price" placeholder="napíš sumu">
                     <div class="invalid-feedback">Prosím vyber správnu možnosť</div>
                     eur.
@@ -408,13 +408,15 @@
               </div>
             </fieldset>
 
-            <p id="scholarship_ok_disclaimer" hidden>
-              Každý sme v inej životnej situácii. Ak Ti navrhované štipendium neumožňuje byť aktívnym študentom NLA a vyššie je už zaznačená maximálna suma, ktorú vieš platiť, prosím, napíš nám v stručnosti dôvod, pre ktorý by Ti vyššie štipendium pomohlo. Nech si vieme urobiť lepší prehľad o Tvojej situácii. Následne sa s Tebou stretneme a vo vzájomnom rozhovore výšku štipendia uzavrieme.
-            </p>
+            <div id="scholarship_ok_disclaimer" hidden>
+              <p>
+                Každý sme v inej životnej situácii. Ak Ti navrhované štipendium neumožňuje byť aktívnym študentom NLA a vyššie je už zaznačená maximálna suma, ktorú vieš platiť, prosím, napíš nám v stručnosti dôvod, pre ktorý by Ti vyššie štipendium pomohlo. Nech si vieme urobiť lepší prehľad o Tvojej situácii. Následne sa s Tebou stretneme a vo vzájomnom rozhovore výšku štipendia uzavrieme.
+              </p>
 
-            <div class="form-group">
-              <label for="feedback">Chceš nám ešte niečo povedať?</label>
-              <input type="text" class="form-control" id="feedback">
+              <div class="form-group">
+                <label for="feedback">Dôvod, pre ktorý žiadam vyššie štipendium:</label>
+                <input type="text" class="form-control" id="feedback">
+              </div>
             </div>
 
             <input id="google_name_surname" type="hidden" name="entry.40465471" class="form-control" >
